@@ -1,7 +1,7 @@
 //
 //  HomeInteractor.swift
 //  Viper_SB
-//  Model
+//  Logic
 //  Created by Uri on 24/11/22.
 //  
 //

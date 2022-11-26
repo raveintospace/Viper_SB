@@ -1,7 +1,7 @@
 //
 //  HomeProtocols.swift
 //  Viper_SB
-//
+//  To communicate the Viper elements amongst them
 //  Created by Uri on 24/11/22.
 //  
 //
@@ -29,7 +29,7 @@ protocol HomePresenterProtocol: class {
 }
 
 protocol HomeInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
 }
 
 protocol HomeInteractorInputProtocol: class {

@@ -9,17 +9,9 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    // var window: UIWindow?       // creation of our window
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Initialize Viper Module and show a window with our VC (homeView)
-        
-//        let homeView = HomeWireFrame.createHomeModule()
-//
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = homeView           // to set the main viewController
-//        window?.makeKeyAndVisible()
+
         return true
     }
 

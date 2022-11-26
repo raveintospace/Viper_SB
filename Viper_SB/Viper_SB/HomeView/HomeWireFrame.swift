@@ -3,7 +3,7 @@
 //  Viper_SB
 //  Router class
 //  Created by Uri on 24/11/22.
-//  
+//  https://www.youtube.com/watch?v=9dOsSb_TXq8 - how to set homeView as launching screen
 //
 
 import Foundation
@@ -11,6 +11,7 @@ import UIKit
 
 class HomeWireFrame: HomeWireFrameProtocol {
 
+    // initializes our HomeView Viper Module (all the swift files inside the HomeView folder)
     class func createHomeModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "navigation")
         if let view = navController.children.first as? HomeView {       // initializations
@@ -20,7 +21,7 @@ class HomeWireFrame: HomeWireFrameProtocol {
             let remoteDataManager: HomeRemoteDataManagerInputProtocol = HomeRemoteDataManager()
             let wireFrame: HomeWireFrameProtocol = HomeWireFrame()
             
-            // assignations
+            // instantiations
             view.presenter = presenter
             presenter.view = view
             presenter.wireFrame = wireFrame
