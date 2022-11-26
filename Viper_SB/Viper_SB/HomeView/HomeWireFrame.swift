@@ -1,7 +1,7 @@
 //
 //  HomeWireFrame.swift
 //  Viper_SB
-//
+//  Router class
 //  Created by Uri on 24/11/22.
 //  
 //
@@ -12,14 +12,15 @@ import UIKit
 class HomeWireFrame: HomeWireFrameProtocol {
 
     class func createHomeModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "HomeView")
-        if let view = navController.children.first as? HomeView {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "navigation")
+        if let view = navController.children.first as? HomeView {       // initializations
             let presenter: HomePresenterProtocol & HomeInteractorOutputProtocol = HomePresenter()
             let interactor: HomeInteractorInputProtocol & HomeRemoteDataManagerOutputProtocol = HomeInteractor()
             let localDataManager: HomeLocalDataManagerInputProtocol = HomeLocalDataManager()
             let remoteDataManager: HomeRemoteDataManagerInputProtocol = HomeRemoteDataManager()
             let wireFrame: HomeWireFrameProtocol = HomeWireFrame()
             
+            // assignations
             view.presenter = presenter
             presenter.view = view
             presenter.wireFrame = wireFrame
