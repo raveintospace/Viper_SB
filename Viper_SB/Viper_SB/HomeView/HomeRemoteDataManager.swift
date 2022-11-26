@@ -12,4 +12,7 @@ class HomeRemoteDataManager:HomeRemoteDataManagerInputProtocol {
     
     var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol?
     
+    func remoteGetData() {      // call to our remote server to get data for our interactor
+        
+    }
 }

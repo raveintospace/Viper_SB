@@ -37,6 +37,9 @@ protocol HomeInteractorInputProtocol: class {
     var presenter: HomeInteractorOutputProtocol? { get set }
     var localDatamanager: HomeLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol? { get set }
+    
+    // interactor manages data when called from the presenter
+    func interactorGetData()
 }
 
 protocol HomeDataManagerInputProtocol: class {
@@ -46,6 +49,7 @@ protocol HomeDataManagerInputProtocol: class {
 protocol HomeRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol? { get set }
+    func remoteGetData()    // to get data from our api
 }
 
 protocol HomeRemoteDataManagerOutputProtocol: class {

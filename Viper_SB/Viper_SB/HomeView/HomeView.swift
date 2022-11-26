@@ -11,7 +11,11 @@ import UIKit
 
 class HomeView: UIViewController {
 
-    // MARK: Properties to communicate with the presenter
+// MARK: - Properties to communicate with the presenter
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    
     var presenter: HomePresenterProtocol?
 
     // MARK: Lifecycle

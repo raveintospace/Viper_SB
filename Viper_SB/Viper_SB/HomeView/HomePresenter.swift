@@ -19,7 +19,8 @@ class HomePresenter  {
 
 extension HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
-        print("View has called me!")
+        // ask the interactor to import data using its own func
+        interactor?.interactorGetData()
     }
 }
 
