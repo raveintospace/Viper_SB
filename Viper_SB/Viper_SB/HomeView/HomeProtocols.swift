@@ -46,14 +46,15 @@ protocol HomeDataManagerInputProtocol: class {
     // INTERACTOR -> DATAMANAGER
 }
 
-protocol HomeRemoteDataManagerInputProtocol: class {
+protocol HomeRemoteDataManagerInputProtocol: class {    // Interactor asks data to remoteDataManager
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol? { get set }
     func remoteGetData()    // to get data from our api
 }
 
-protocol HomeRemoteDataManagerOutputProtocol: class {
+protocol HomeRemoteDataManagerOutputProtocol: class {   // remoteDataManager sends data to Interactor
     // REMOTEDATAMANAGER -> INTERACTOR
+    func remoteDataManagerCallBackData(with category: [CategoryURL])
 }
 
 protocol HomeLocalDataManagerInputProtocol: class {

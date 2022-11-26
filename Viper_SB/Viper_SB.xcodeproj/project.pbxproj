@@ -20,6 +20,7 @@
 		34162130292FC52A00F8BFCA /* HomeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34162129292FC52A00F8BFCA /* HomeRemoteDataManager.swift */; };
 		34162131292FC52A00F8BFCA /* HomeWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3416212A292FC52A00F8BFCA /* HomeWireFrame.swift */; };
 		3416213429321E6F00F8BFCA /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3416213329321E6F00F8BFCA /* HomeView.storyboard */; };
+		34FC0D45293265E3004286D2 /* CategoryURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FC0D44293265E3004286D2 /* CategoryURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		34162129292FC52A00F8BFCA /* HomeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRemoteDataManager.swift; sourceTree = "<group>"; };
 		3416212A292FC52A00F8BFCA /* HomeWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWireFrame.swift; sourceTree = "<group>"; };
 		3416213329321E6F00F8BFCA /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
+		34FC0D44293265E3004286D2 /* CategoryURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				34162126292FC52A00F8BFCA /* HomeProtocols.swift */,
 				34162129292FC52A00F8BFCA /* HomeRemoteDataManager.swift */,
 				3416212A292FC52A00F8BFCA /* HomeWireFrame.swift */,
+				34FC0D44293265E3004286D2 /* CategoryURL.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				34162115292F8E8500F8BFCA /* ViewController.swift in Sources */,
 				34162111292F8E8500F8BFCA /* AppDelegate.swift in Sources */,
+				34FC0D45293265E3004286D2 /* CategoryURL.swift in Sources */,
 				3416212C292FC52A00F8BFCA /* HomeLocalDataManager.swift in Sources */,
 				34162113292F8E8500F8BFCA /* SceneDelegate.swift in Sources */,
 				3416212D292FC52A00F8BFCA /* HomeProtocols.swift in Sources */,
