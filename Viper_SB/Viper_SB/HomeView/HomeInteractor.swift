@@ -14,6 +14,8 @@ class HomeInteractor: HomeInteractorInputProtocol {
     weak var presenter: HomeInteractorOutputProtocol?
     var localDatamanager: HomeLocalDataManagerInputProtocol?
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol?
+    
+    var arrayURL = [DetailURL]()    // object of another Entity of our Viper
 
     func interactorGetData() {          // ask remoteDataManager to get data
         remoteDatamanager?.remoteGetData()
@@ -24,7 +26,6 @@ extension HomeInteractor: HomeRemoteDataManagerOutputProtocol {
     
     func remoteDataManagerCallBackData(with category: [CategoryURL]) { // interactor has raw data from remoteDataManager
     }
-    
-    // interactor sends converted data to the presenter
-    
+    // interactor sends converted data to the presenter, from CategoryURL to DetailURL
+    // https://www.youtube.com/watch?v=8hubG7tu5ng - ds 26
 }
