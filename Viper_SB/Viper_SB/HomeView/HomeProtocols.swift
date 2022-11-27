@@ -12,6 +12,7 @@ import UIKit
 protocol HomeViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: HomePresenterProtocol? { get set }
+    func presenterPushToDataView(receivedData: [DetailURL])  // to send data from presenter to view
 }
 
 protocol HomeWireFrameProtocol: class {
@@ -28,8 +29,9 @@ protocol HomePresenterProtocol: class {
     func viewDidLoad()
 }
 
-protocol HomeInteractorOutputProtocol: class {
+protocol HomeInteractorOutputProtocol: class {  // to send data from interactor to presenter
     // INTERACTOR -> PRESENTER
+    func interactorPushDataToPresenter(receivedData: [DetailURL])
 }
 
 protocol HomeInteractorInputProtocol: class {

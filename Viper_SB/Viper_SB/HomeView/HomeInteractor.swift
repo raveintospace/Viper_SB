@@ -9,14 +9,14 @@
 import Foundation
 
 class HomeInteractor: HomeInteractorInputProtocol {
-
+    
     // MARK: Properties
     weak var presenter: HomeInteractorOutputProtocol?
     var localDatamanager: HomeLocalDataManagerInputProtocol?
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol?
     
-    var arrayURL = [DetailURL]()    // object of another Entity of our Viper
-
+    var arrayURL = [DetailURL]()    // to store the converted data got from our api call
+    
     func interactorGetData() {          // ask remoteDataManager to get data
         remoteDatamanager?.remoteGetData()
     }
@@ -25,7 +25,13 @@ class HomeInteractor: HomeInteractorInputProtocol {
 extension HomeInteractor: HomeRemoteDataManagerOutputProtocol {
     
     func remoteDataManagerCallBackData(with category: [CategoryURL]) { // interactor has raw data from remoteDataManager
+        
+        // interactor sends converted data to the presenter, from CategoryURL to DetailURL
+        for url in category {
+            let urlString = DetailURL(detailURL: url._links.mySelf[0].href)
+            self.arrayURL.append(urlString)
+        }
+        // send converted data to presenter
+        presenter?.interactorPushDataToPresenter(receivedData: self.arrayURL)
     }
-    // interactor sends converted data to the presenter, from CategoryURL to DetailURL
-    // https://www.youtube.com/watch?v=8hubG7tu5ng - ds 26
 }

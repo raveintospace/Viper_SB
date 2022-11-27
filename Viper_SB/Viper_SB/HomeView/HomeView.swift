@@ -18,7 +18,9 @@ class HomeView: UIViewController {
     
     var presenter: HomePresenterProtocol?
 
-    // MARK: Lifecycle
+    var arrayViewURL = [DetailURL]()    // stores data received from presenter
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +31,24 @@ class HomeView: UIViewController {
 }
 
 extension HomeView: HomeViewProtocol {
-    // TODO: implement view output methods
+    // show in view data received from Presenter
+    func presenterPushToDataView(receivedData: [DetailURL]) {
+        arrayViewURL = receivedData
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
 }
 
 extension HomeView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return arrayViewURL.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = "Hello"
+        cell.textLabel?.text = arrayViewURL[indexPath.row].detailURL
         return cell
     }
 }
@@ -47,3 +56,5 @@ extension HomeView: UITableViewDataSource {
 extension HomeView: UITableViewDelegate {
     
 }
+
+// https://www.youtube.com/watch?v=APLVVljTmD8 - lesson for monday
