@@ -21,6 +21,7 @@ extension HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
         // ask the interactor to import data using its own func
         interactor?.interactorGetData()
+        view?.startActivitySpinner()
     }
 }
 
@@ -28,6 +29,7 @@ extension HomePresenter: HomeInteractorOutputProtocol {
     // receive data from interactor and send it to view
     func interactorPushDataToPresenter(receivedData: [DetailURL]) {
         view?.presenterPushToDataView(receivedData: receivedData)
+        view?.stopAndHideActivitySpinner()
     }
     
 }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class HomeWireFrame: HomeWireFrameProtocol {
-
+    
     // initializes our HomeView Viper Module (all the swift files inside the HomeView folder)
     class func createHomeModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "navigation")
@@ -40,4 +40,8 @@ class HomeWireFrame: HomeWireFrameProtocol {
         return UIStoryboard(name: "HomeView", bundle: Bundle.main)
     }
     
+    func presentNewViewDetail(from view: UIViewController, withData: DetailURL) {
+        let newDetailView = DetailWireFrame.createDetailModule(with: withData)    // creates and instantiates a new Viper module
+        view.navigationController?.pushViewController(newDetailView, animated: true)
+    }    
 }

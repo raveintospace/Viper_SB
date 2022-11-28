@@ -13,11 +13,15 @@ protocol HomeViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: HomePresenterProtocol? { get set }
     func presenterPushToDataView(receivedData: [DetailURL])  // to send data from presenter to view
+    func startActivitySpinner()
+    func stopAndHideActivitySpinner()
 }
 
 protocol HomeWireFrameProtocol: class {
-    // PRESENTER -> WIREFRAME
+    // PRESENTER -> WIREFRAME aka Router
     static func createHomeModule() -> UIViewController
+
+    func presentNewViewDetail(from view: UIViewController, withData: DetailURL) // to present a new VC from our HVC
 }
 
 protocol HomePresenterProtocol: class {

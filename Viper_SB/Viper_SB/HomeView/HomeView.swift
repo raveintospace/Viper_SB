@@ -31,13 +31,26 @@ class HomeView: UIViewController {
 }
 
 extension HomeView: HomeViewProtocol {
+    
     // show in view data received from Presenter
     func presenterPushToDataView(receivedData: [DetailURL]) {
         arrayViewURL = receivedData
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        
+    }
+    
+    func startActivitySpinner() {   // func is defined here, but called in Presenter
+        DispatchQueue.main.async {
+            self.activity.startAnimating()
+        }
+    }
+    
+    func stopAndHideActivitySpinner() {
+        DispatchQueue.main.async {
+            self.activity.stopAnimating()
+            self.activity.hidesWhenStopped = true
+        }
     }
 }
 
@@ -54,7 +67,8 @@ extension HomeView: UITableViewDataSource {
 }
 
 extension HomeView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
 }
-
-// https://www.youtube.com/watch?v=APLVVljTmD8 - lesson for monday
