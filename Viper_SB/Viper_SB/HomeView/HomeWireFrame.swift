@@ -37,11 +37,14 @@ class HomeWireFrame: HomeWireFrameProtocol {
     }
     
     static var mainStoryboard: UIStoryboard {
-        return UIStoryboard(name: "HomeView", bundle: Bundle.main)
+        return UIStoryboard(name: "HomeView", bundle: Bundle.main)      // name of the file
     }
     
-    func presentNewViewDetail(from view: UIViewController, withData: DetailURL) {
+    func presentNewViewDetail(from view: HomeViewProtocol, withData: DetailURL) {
         let newDetailView = DetailWireFrame.createDetailModule(with: withData)    // creates and instantiates a new Viper module
-        view.navigationController?.pushViewController(newDetailView, animated: true)
-    }    
+        
+        if let newView = view as? UIViewController {
+            newView.navigationController?.pushViewController(newDetailView, animated: true)
+        }
+    }
 }

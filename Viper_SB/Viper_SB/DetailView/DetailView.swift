@@ -20,11 +20,13 @@ class DetailView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.viewDidLoad()
     }
 }
 
 extension DetailView: DetailViewProtocol {
     // TODO: implement view output methods
+    func showDataInLabel(data: DetailURL) {
+        detailViewLabel.text = data.detailURL
+    }
 }
-
-// https://youtu.be/dPZFWr0U-uI lesson 40 for tuesday

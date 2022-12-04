@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6n-mv-iqd">
-                                <rect key="frame" x="20" y="233" width="374" height="131"/>
+                                <rect key="frame" x="186.5" y="233" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,10 +27,8 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="H6n-mv-iqd" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailingMargin" id="ANj-Hv-rN5"/>
                             <constraint firstItem="H6n-mv-iqd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="185" id="Uxv-45-Z4H"/>
-                            <constraint firstItem="H6n-mv-iqd" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="gqW-lx-QoN"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="H6n-mv-iqd" secondAttribute="bottom" constant="498" id="ifb-CF-AA6"/>
+                            <constraint firstItem="H6n-mv-iqd" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Vdy-cS-6NH"/>
                         </constraints>
                     </view>
                     <connections>

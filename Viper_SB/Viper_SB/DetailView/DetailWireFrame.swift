@@ -12,8 +12,8 @@ import UIKit
 class DetailWireFrame: DetailWireFrameProtocol {
 
     static func createDetailModule(with data: DetailURL) -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "DetailView")
-        if let view = navController.children.first as? DetailView {
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "detailView")
+        if let view = viewController as? DetailView {
             let presenter: DetailPresenterProtocol & DetailInteractorOutputProtocol = DetailPresenter()
             let interactor: DetailInteractorInputProtocol & DetailRemoteDataManagerOutputProtocol = DetailInteractor()
             let localDataManager: DetailLocalDataManagerInputProtocol = DetailLocalDataManager()
@@ -24,12 +24,13 @@ class DetailWireFrame: DetailWireFrameProtocol {
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
+            presenter.dataURLReceived = data    // assign the data coming from mainVC to the property of presenter
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
             
-            return navController
+            return viewController
         }
         return UIViewController()
     }

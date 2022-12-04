@@ -21,7 +21,7 @@ protocol HomeWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME aka Router
     static func createHomeModule() -> UIViewController
 
-    func presentNewViewDetail(from view: UIViewController, withData: DetailURL) // to present a new VC from our HVC
+    func presentNewViewDetail(from view: HomeViewProtocol, withData: DetailURL) // to present a new VC from our HVC
 }
 
 protocol HomePresenterProtocol: class {
@@ -31,6 +31,8 @@ protocol HomePresenterProtocol: class {
     var wireFrame: HomeWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    
+    func showDetailView(with data: DetailURL)
 }
 
 protocol HomeInteractorOutputProtocol: class {  // to send data from interactor to presenter

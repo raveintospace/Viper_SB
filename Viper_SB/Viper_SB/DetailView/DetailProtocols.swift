@@ -12,6 +12,7 @@ import UIKit
 protocol DetailViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: DetailPresenterProtocol? { get set }
+    func showDataInLabel(data: DetailURL)
 }
 
 protocol DetailWireFrameProtocol: class {
@@ -24,7 +25,7 @@ protocol DetailPresenterProtocol: class {
     var view: DetailViewProtocol? { get set }
     var interactor: DetailInteractorInputProtocol? { get set }
     var wireFrame: DetailWireFrameProtocol? { get set }
-    
+    var dataURLReceived: DetailURL? { get set }   // to store the data we receive from mainVC, can be read (get) and written (set)
     func viewDidLoad()
 }
 

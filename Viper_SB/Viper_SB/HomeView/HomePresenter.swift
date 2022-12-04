@@ -23,6 +23,10 @@ extension HomePresenter: HomePresenterProtocol {
         interactor?.interactorGetData()
         view?.startActivitySpinner()
     }
+    
+    func showDetailView(with data: DetailURL) { // call the wireframe to load detailVC
+        wireFrame?.presentNewViewDetail(from: view!, withData: data)
+    }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {

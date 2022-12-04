@@ -8,18 +8,20 @@
 
 import Foundation
 
-class DetailPresenter  {
+class DetailPresenter: DetailPresenterProtocol  {
     
     // MARK: Properties
     weak var view: DetailViewProtocol?
     var interactor: DetailInteractorInputProtocol?
     var wireFrame: DetailWireFrameProtocol?
+    var dataURLReceived: DetailURL? // stores the data sent from our mainVC
     
-}
-
-extension DetailPresenter: DetailPresenterProtocol {
-    // TODO: implement presenter methods
     func viewDidLoad() {
+        print("I'm the detail VC and I have: \(String(describing: dataURLReceived?.detailURL))")
+        
+        if let dataURLReceived = dataURLReceived {
+            view?.showDataInLabel(data: dataURLReceived)
+        }
     }
 }
 

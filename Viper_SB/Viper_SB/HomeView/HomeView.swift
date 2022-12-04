@@ -68,7 +68,7 @@ extension HomeView: UITableViewDataSource {
 
 extension HomeView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        presenter?.showDetailView(with: DetailURL(detailURL: arrayViewURL[indexPath.row].detailURL))
     }
     
 }
